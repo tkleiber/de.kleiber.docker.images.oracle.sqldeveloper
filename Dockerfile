@@ -1,4 +1,6 @@
 FROM localhost:5000/oracle/serverjre:8
+ARG SW_DIR
+ARG SW_FILE
 MAINTAINER torsten.kleiber@web.de
 RUN yum -y install xterm xauth libXtst
 ADD $SW_DIR/$SW_FILE /tmp/
