@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build Oracle SQL Developer Image') {
       steps {
-        sh 'echo Version $SW_VERSION, File $SW_FILE'
+        sh '''echo Version $SW_VERSION, File $SW_FILE
+ls $SW_VERSION/$SW_FILE'''
         sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_DIR="$SW_DIR" --build-arg SW_FILE="$SW_FILE" .'
       }
     }
