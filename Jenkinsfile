@@ -10,7 +10,9 @@ pipeline {
       steps {
         dir(path: 'Oracle/SQL Developer') {
           sh 'echo Version $SW_VERSION, File $SW_FILE'
-          sh 'if [ ! -f $SW_FILE ]; then cp "/software/Oracle/SQL Developer/$SW_FILE" $SW_FILE; fi'
+          sh '''if [ ! -f $SW_FILE ]; then cp "/software/Oracle/SQL Developer/$SW_FILE" $SW_FILE; fi
+pwd
+ls'''
           sh 'sudo docker build -t oracle/sqldeveloper:$SW_VERSION .'
         }
         
