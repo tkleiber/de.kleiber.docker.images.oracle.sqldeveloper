@@ -10,6 +10,8 @@ pipeline {
       steps {
         dir(path: 'Oracle/SQL Developer') {
           echo 'Version $SW_VERSION, File $SW_FILE'
+          sh 'printenv'
+          sh 'echo Version $SW_VERSION, File $SW_FILE'
         }
         
       }
