@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''echo Version $SW_VERSION, File $SW_FILE
 ls $SW_DIR/$SW_FILE'''
-        sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_DIR="$SW_DIR" --build-arg SW_FILE="$SW_FILE" .'
+        sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_DIR=$SW_DIR --build-arg SW_FILE=$SW_FILE .'
       }
     }
     stage('Push Docker Image to Local Registry') {
@@ -29,6 +29,6 @@ ls $SW_DIR/$SW_FILE'''
   environment {
     SW_VERSION = '4.1.5'
     SW_FILE = 'sqldeveloper-4.1.5.21.78-1.noarch.rpm'
-    SW_DIR = '/software/Oracle/SQL Developer'
+    SW_DIR = '/software/Oracle/SQLDeveloper'
   }
 }
