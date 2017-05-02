@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build Oracle SQL Developer Image') {
       steps {
-        sh 'if [ ! -f $SW_FILE ]; then cp "$SW_DIR/$SW_FILE" sqldeveloper-4.1.5.21.78-1.noarch.rpm; fi'
+        sh 'if [ ! -f $SW_FILE ]; then cp "$SW_DIR/$SW_FILE" $SW_FILE; fi'
         sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_FILE=$SW_FILE .'
       }
     }
