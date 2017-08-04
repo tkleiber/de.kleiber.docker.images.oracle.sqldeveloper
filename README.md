@@ -12,4 +12,4 @@ This is the repository for creating a Docker Image from where you can running SQ
 * Start MobaXTerm and connect to your Linux VM via ssh
 * Check in the MobaXTerm Banner that X-11 forwarding is enabled
 * Start SQL Developer via
-* sudo docker run -ti --rm --name="sqldeveloper.4.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:4.2.0
+* sudo docker run -ti --rm --name="sqldeveloper.17.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.2.0
