@@ -3,7 +3,7 @@ pipeline {
     node {
       label 'localhost_vagrant'
     }
-    
+
   }
   stages {
     stage('Build Oracle SQL Developer Image') {
@@ -26,8 +26,8 @@ pipeline {
     }
   }
   environment {
-    SW_VERSION = '4.2.0'
-    SW_FILE = 'sqldeveloper-4.2.0.17.089.1709-1.noarch.rpm'
+    SW_VERSION = '17.2.0'
+    SW_FILE = 'sqldeveloper-17.2.0.188.1159-1.noarch.rpm'
     SW_DIR = '/software/Oracle/SQLDeveloper'
   }
 }
