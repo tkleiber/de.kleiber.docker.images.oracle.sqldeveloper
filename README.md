@@ -11,5 +11,6 @@ This is the repository for creating a Docker Image from where you can running SQ
 * At first your Linux VM should contain the screen package, you install it like "sudo apt-get -y install screen"
 * Start MobaXTerm and connect to your Linux VM via ssh
 * Check in the MobaXTerm Banner that X-11 forwarding is enabled
+* Mouse hover the MobaXTerm XServer Icon to find the DISPLAY Variable and export this in the shell
 * Start SQL Developer via
 * sudo docker run -ti --rm --name="sqldeveloper.17.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.2.0
