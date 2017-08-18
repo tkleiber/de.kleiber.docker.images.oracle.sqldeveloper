@@ -13,4 +13,5 @@ This is the repository for creating a Docker Image from where you can running SQ
 * Check in the MobaXTerm Banner that X-11 forwarding is enabled
 * Mouse hover the MobaXTerm XServer Icon to find the DISPLAY Variable and export this in the shell
 * Start SQL Developer via
-* sudo docker run -ti --rm --name="sqldeveloper.17.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.2.0
+** export DISPLAY=<X Server address>
+** sudo docker run -ti --rm --name="sqldeveloper.17.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.2.0
