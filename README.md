@@ -2,9 +2,9 @@
 
 This is the repository for creating a Docker Image from where you can running SQL Developer in Windows.
 
-## Pipeline for creating:
+## Jenkins Pipeline for creating the image:
 * At first your Linux VM should contain a local docker registry on port 5000, you can use the default docker registry image for this
-* Download sqldeveloper-<Version>.noarch.rpm to /software/Oracle/SQLDeveloper
+* Download sqldeveloper-<Version>.noarch.rpm to /software/Oracle/SQL Developer
 * Create a Jenkins Job from provided Jenkinsfile and start it to build the image and put it to the local registry.
 
 ## Starting SQL Developer from Windows
@@ -14,4 +14,4 @@ This is the repository for creating a Docker Image from where you can running SQ
 * Mouse hover the MobaXTerm XServer Icon to find the DISPLAY Variable and export this in the shell
 * Start SQL Developer via
     * export DISPLAY=&lt;X Server address>
-    * sudo docker run -ti --rm --name="sqldeveloper.17.2.0" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.2.0
+    * sudo docker run -ti --rm --name="sqldeveloper.17.3.1" -e DISPLAY -v $HOME/.Xauthority:/home/oracle/.Xauthority --net=host localhost:5000/oracle/sqldeveloper:17.3.1
