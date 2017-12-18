@@ -28,6 +28,6 @@ pipeline {
   environment {
     SW_VERSION = '17.3.1'
     SW_FILE = 'sqldeveloper-17.3.1.279.0537-1.noarch.rpm'
-    SW_DIR = '/software/Oracle/SQLDeveloper'
+    SW_DIR = '/software/Oracle/SQL Developer'
   }
 }
