@@ -5,6 +5,9 @@ pipeline {
     }
 
   }
+  options {
+    buildDiscarder(logRotator(numToKeepStr:'10'))
+  }
   stages {
     stage('Build Oracle SQL Developer Image') {
       steps {
@@ -26,8 +29,8 @@ pipeline {
     }
   }
   environment {
-    SW_VERSION = '17.3.1'
-    SW_FILE = 'sqldeveloper-17.3.1.279.0537-1.noarch.rpm'
+    SW_VERSION = '17.4.0'
+    SW_FILE = 'sqldeveloper-17.4.0.355.2349-1.noarch.rpm'
     SW_DIR = '/software/Oracle/SQL Developer'
   }
 }
