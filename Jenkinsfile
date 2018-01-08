@@ -12,7 +12,9 @@ pipeline {
     stage('Build Oracle SQL Developer Image') {
       steps {
         sh 'if [ ! -f $SW_FILE ]; then cp "$SW_DIR/$SW_FILE" $SW_FILE; fi'
-        sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_FILE=$SW_FILE .'
+        withCredentials([usernamePassword(credentialsId: 'store.docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+          sh 'sudo docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg USER=$USERNAME --build-arg PASSWORD=$PASSWORD --build-arg SW_FILE=$SW_FILE .'
+        }
       }
     }
     stage('Push Docker Image to Local Registry') {
