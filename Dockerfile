@@ -1,7 +1,5 @@
 FROM store/oracle/serverjre:8
 MAINTAINER torsten.kleiber@web.de
-ARG USER
-ARG PASSWORD
 ARG SW_FILE
 ADD $SW_FILE /tmp/
 RUN yum -y install xterm xauth libXtst \
