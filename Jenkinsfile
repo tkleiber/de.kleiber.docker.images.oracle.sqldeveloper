@@ -1,10 +1,12 @@
 pipeline {
   agent {
-    node {
-      label 'localhost_vagrant'
-    }
-
+    label 'docker_in_docker'
   }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '1', artifactNumToKeepStr: '1'))
+  }
+
   stages {
     stage('Build Oracle SQL Developer Image') {
       steps {
