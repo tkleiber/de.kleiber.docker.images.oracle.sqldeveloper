@@ -30,8 +30,8 @@ docker build --tag oracle/sqldeveloper:$SW_VERSION --build-arg SW_FILE=$SW_FILE 
     }
   }
   environment {
-    SW_VERSION = '18.1.0'
-    SW_FILE = 'sqldeveloper-18.1.0.095.1630-1.noarch.rpm'
+    SW_VERSION = '21.4.2'
+    SW_FILE = 'sqldeveloper-21.4.2-018.1706.noarch.rpm'
     SW_DIR = '/software/Oracle/SQL Developer'
   }
   options {
